@@ -6,18 +6,22 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 02:52:06 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/22 02:53:05 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/08/22 03:06:45 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int		ft_putchar(char c);
 
 void	ft_putstr(char const *s)
 {
+	int		i;
+
+	i = 0;
 	if (!s)
 		return ;
-	while (*s != '\0')
+	while (s[i] != '\0')
 	{
-		ft_putchar(*s);
-		s++;
+		ft_putchar(&s[i]);
+		i++;
 	}
 }
