@@ -6,26 +6,26 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 14:36:48 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/12 15:40:37 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/08/23 01:47:16 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char			*ft_strtrim(char const *s)
 {
-	size_t		i;
-	size_t		back;
+	int			i;
+	int			back;
 	char		*copy;
-	
+
 	i = 0;
 	back = 0;
 	if (!s)
 		return (NULL);
-	while (*s == '' || *s == '\n' || *s == '\t')
+	while (*s == ' ' || *s == '\n' || *s == '\t')
 		s++;
 	i = ft_strlen(s) - 1;
 	if (i == -1)
 		return (ft_strnew(0));
-	while(s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 	{
 		i--;
 		back++;
@@ -35,9 +35,6 @@ char			*ft_strtrim(char const *s)
 		return (NULL);
 	i = 0;
 	while (i < (int)ft_strlen(s) - back)
-	{
-		copy[i] = s[i];
-		i++;
-	}
+		copy[i++] = s[i++];
 	return (copy);
 }
