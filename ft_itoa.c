@@ -6,11 +6,9 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 21:27:03 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/22 21:27:10 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/08/22 21:28:22 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void			ft_putstr(char const *s);
 
 static	void	ft_bzero2(char *str, int n)
 {
