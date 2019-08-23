@@ -6,7 +6,7 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 02:52:06 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/22 03:06:45 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/08/22 19:00:58 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putstr(char const *s)
 		return ;
 	while (s[i] != '\0')
 	{
-		ft_putchar(&s[i]);
+		ft_putchar(s[i]);
 		i++;
 	}
 }
