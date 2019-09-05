@@ -6,7 +6,7 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:41:07 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/03 23:07:09 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/05 05:41:54 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ char	*ft_strcpy(char *dst, const char *src)
 		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
 	return (dst);
 }
