@@ -6,22 +6,24 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 22:47:05 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/07/27 01:07:39 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/03 23:26:43 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *sentence, int ch)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
 	int i;
 
 	i = 0;
-	while (sentence[i])
+	while (s[i])
 	{
-		if (sentence[i] == ch)
-			return (char *)&sentence[i];
+		if (s[i] == c)
+			return (char *)&s[i];
 		i++;
 	}
-	if (ch == '\0')
-		return (char *)&sentence[i];
+	if (c == '\0')
+		return (char *)&s[i];
 	return (0);
 }

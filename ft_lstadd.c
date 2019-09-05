@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/29 01:23:46 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/03 23:23:19 by trinnguy         ###   ########.fr       */
+/*   Created: 2019/08/31 06:50:06 by trinnguy          #+#    #+#             */
+/*   Updated: 2019/09/04 05:02:13 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncat(char *s1, const char *s2, size_t n)
+void		ft_lstadd(t_list **alst, t_list *new)
 {
-	int		i;
-	size_t	j;
+	t_list	*add_elem;
 
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0' || j < n)
-	{
-		s1[i] = s2[j];
-		i++;
-		j++;
-	}
-	s1[i] = '\0';
-	return (s1);
+	if (!(add_elem = (t_list *)malloc(sizeof(t_list))))
+		return ;
+	add_elem = new;
+	add_elem->next = *alst;
+	*alst = add_elem;
 }

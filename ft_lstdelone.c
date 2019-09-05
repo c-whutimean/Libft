@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/29 01:23:46 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/03 23:23:19 by trinnguy         ###   ########.fr       */
+/*   Created: 2019/08/30 07:30:55 by trinnguy          #+#    #+#             */
+/*   Updated: 2019/09/01 04:40:09 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncat(char *s1, const char *s2, size_t n)
+void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	int		i;
-	size_t	j;
+	t_list	*node;
 
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0' || j < n)
-	{
-		s1[i] = s2[j];
-		i++;
-		j++;
-	}
-	s1[i] = '\0';
-	return (s1);
+	node = NULL;
+	if (!alst || !*alst)
+		return ;
+	node = *alst;
+	del((node->content), (node->content_size));
+	free(*alst);
+	*alst = NULL;
 }

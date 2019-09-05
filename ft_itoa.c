@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/22 21:27:03 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/22 21:28:22 by trinnguy         ###   ########.fr       */
+/*   Created: 2019/08/22 18:36:55 by trinnguy          #+#    #+#             */
+/*   Updated: 2019/09/04 03:26:09 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static	void	ft_bzero2(char *str, int n)
 {
@@ -24,28 +26,13 @@ static	void	ft_bzero2(char *str, int n)
 	}
 }
 
-static	int		neg_checker(int n)
-{
-	if (n < 0)
-	{
-		if (n == -2147483647)
-		{
-			ft_putstr("-2147483647\n");
-			return (n);
-		}
-		n = n * -1;
-		ft_putstr("-");
-	}
-	return (n);
-}
-
 static int		init(int n, int *tens, int *index)
 {
 	int temp;
 
 	*tens = 1;
 	*index = 0;
-	temp = neg_checker(n);
+	temp = negative_checker(n);
 	return (temp);
 }
 

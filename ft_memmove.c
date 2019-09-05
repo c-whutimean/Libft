@@ -6,20 +6,22 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/29 04:05:09 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/01 00:49:42 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/04 00:45:19 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memcpy(void *dest, const void *src, size_t len);
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void			*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*temp_src;
-	char	*temp_dest;
+	const char	*temp_src;
+	char		*temp_dest;
 
-	temp_src = (char *)src;
-	temp_dest = (char *)dest;
-	if (src < dest)
+	temp_src = src;
+	temp_dest = dst;
+	if (!dst || !src || !len)
+		return (NULL);
+	if (src < dst)
 	{
 		while (len > 0)
 		{
@@ -28,6 +30,6 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 		}
 	}
 	else
-		ft_memcpy(dest, src, len);
-	return ((void *)temp_dest);
+		ft_memcpy(dst, src, len);
+	return (temp_dest);
 }

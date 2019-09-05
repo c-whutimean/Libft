@@ -1,17 +1,31 @@
 /* ************************************************************************** */
-*                                                                            */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/19 23:30:03 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/21 23:21:37 by trinnguy         ###   ########.fr       */
+/*   Created: 2019/08/23 00:55:49 by trinnguy          #+#    #+#             */
+/*   Updated: 2019/09/04 01:44:23 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_putstr_fd(char const *s, int fd);
-void		ft_putchar_fd(char c, int fd);
+#include "libft.h"
+
+static int	neg_checker(int n)
+{
+	if (n < 0)
+	{
+		if (n == -2147483648)
+		{
+			ft_putstr_fd("-2147483648\n", 1);
+			return (n);
+		}
+		n = n * -1;
+		ft_putchar_fd('-', 1);
+	}
+	return (n);
+}
 
 void		ft_putnbr_fd(int n, int fd)
 {
@@ -19,19 +33,10 @@ void		ft_putnbr_fd(int n, int fd)
 	int		ten;
 	int		num;
 
-	out	= 0;
+	out = 0;
 	num = 0;
 	ten = 1;
-	if (n < 0)
-	{
-		if (n == -2147483648)
-		{
-			ft_putstr_fd("-2147483648\n", fd);
-			return ;
-		}
-		n = n * -1;
-		ft_putchar_fd('-', fd);
-	}
+	n = neg_checker(n);
 	num = n;
 	while (n > 9)
 	{

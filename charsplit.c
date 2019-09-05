@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   charsplit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/29 01:23:46 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/03 23:23:19 by trinnguy         ###   ########.fr       */
+/*   Created: 2019/09/02 01:24:08 by trinnguy          #+#    #+#             */
+/*   Updated: 2019/09/02 01:26:49 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncat(char *s1, const char *s2, size_t n)
+char		*charsplit(char const *s, char c)
 {
-	int		i;
-	size_t	j;
+	int			i;
+	int			back;
+	char		*copy;
 
 	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0' || j < n)
+	back = 0;
+	if (!s)
+		return (NULL);
+	while (*s == c)
+		s++;
+	i = ft_strlen(s) - 1;
+	if (i == -1)
+		return (ft_strnew(0));
+	while (s[i--] == c)
+		back++;
+	copy = ft_strnew(ft_strlen(s) - back);
+	if (!copy)
+		return (NULL);
+	i = 0;
+	while (i < (int)ft_strlen(s) - back)
 	{
-		s1[i] = s2[j];
+		copy[i] = s[i];
 		i++;
-		j++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (copy);
 }

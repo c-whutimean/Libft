@@ -6,13 +6,15 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/29 01:51:14 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/07/29 02:09:59 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/03 23:50:06 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *str, int c, size_t len)
+#include "libft.h"
+
+void		*ft_memset(void *str, int c, size_t len)
 {
-	int		i;
+	size_t	i;
 	char	*temp;
 
 	i = 0;

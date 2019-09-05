@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/22 02:52:06 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/22 19:00:58 by trinnguy         ###   ########.fr       */
+/*   Created: 2019/08/22 20:26:41 by trinnguy          #+#    #+#             */
+/*   Updated: 2019/08/22 21:54:08 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+#include "libft.h"
 
 void	ft_putstr(char const *s)
 {

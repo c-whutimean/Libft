@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/29 01:23:46 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/03 23:23:19 by trinnguy         ###   ########.fr       */
+/*   Created: 2019/09/02 00:43:40 by trinnguy          #+#    #+#             */
+/*   Updated: 2019/09/02 01:02:06 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncat(char *s1, const char *s2, size_t n)
+t_list		*ft_lstmap(t_list *lst, void (*f)(t_list *elem))
 {
-	int		i;
-	size_t	j;
+	t_list	*head;
+	t_list	*node;
 
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0' || j < n)
+	head = NULL;
+	head = (t_list *)malloc(sizeof(t_list));
+	if (!list)
+		return (NULL);
+	node = f(lst);
+	head = node;
+	while (lst->next)
 	{
-		s1[i] = s2[j];
-		i++;
-		j++;
+		lst = lst->next;
+		node->next = f(lst);
+		node = node->next;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (head);
 }

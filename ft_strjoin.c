@@ -6,9 +6,11 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 23:31:54 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/12 00:08:27 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/08/22 21:56:41 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char			*ft_strjoin(char const *s1, char const *s2)
 {

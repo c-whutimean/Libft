@@ -6,14 +6,16 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 00:55:50 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/10 01:21:52 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/03 23:26:17 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t		strlcat(char *dst, const char *src, size_t dstsize)
+#include "libft.h"
+
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t		i;
-	size_t		conditon;
+	size_t		condition;
 	size_t		dest_len;
 	size_t		src_len;
 

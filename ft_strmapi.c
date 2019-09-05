@@ -6,9 +6,11 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 00:34:11 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/10 00:40:17 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/03 23:42:39 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -16,7 +18,7 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*fresh;
 
 	i = 0;
-	fresh = ft_strnew(str_len(s));
+	fresh = ft_strnew(ft_strlen(s));
 	if (!s || !f)
 		return (NULL);
 	if (!fresh)

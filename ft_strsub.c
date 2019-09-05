@@ -6,11 +6,11 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/08 01:47:42 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/11 22:46:01 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/03 23:45:19 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnew(size_t size);
+#include "libft.h"
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
@@ -20,9 +20,9 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
+	sub = ft_strnew(len);
 	if (!sub)
 		return (NULL);
-	sub = ft_strnew(len);
 	while (len > 0)
 	{
 		sub[i] = s[start];

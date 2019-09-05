@@ -6,19 +6,21 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:41:07 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/08 21:20:57 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/03 23:07:09 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *final, char *source)
+#include "libft.h"
+
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int i;
 
 	i = 0;
-	while (source[i] != '\0')
+	while (src[i] != '\0')
 	{
-		final[i] = source[i];
+		dst[i] = src[i];
 		i++;
 	}
-	return (final);
+	return (dst);
 }

@@ -6,13 +6,11 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 23:49:53 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/08 00:20:42 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/08/22 22:09:50 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	ft_bzero(void *str, size_t n);
+#include "libft.h"
 
 void	*ft_memalloc(size_t size)
 {

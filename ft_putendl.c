@@ -6,12 +6,11 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 23:17:42 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/07/31 23:24:15 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/08/22 22:09:30 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(char const *s);
-void	ft_putchar(char c);
+#include "libft.h"
 
 void	ft_putendl(char const *s)
 {

@@ -6,11 +6,13 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 03:38:38 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/07/25 03:43:03 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/08/24 22:13:38 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);
