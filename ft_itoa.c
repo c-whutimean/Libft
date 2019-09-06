@@ -1,66 +1,71 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/22 18:36:55 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/04 03:26:09 by trinnguy         ###   ########.fr       */
+/*   Created: 2019/09/06 00:08:11 by trinnguy          #+#    #+#             */
+/*   Updated: 2019/09/06 01:13:42 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void	ft_bzero2(char *str, int n)
+static int	n_checker(int n)
 {
-	int			i;
-	char		*temp;
-
-	i = 0;
-	temp = str;
-	while (i < n)
+	if (n == 0)
 	{
-		temp[i] = '\0';
-		i++;
+		return (1);
 	}
+	return (0);
 }
 
-static int		init(int n, int *tens, int *index)
+static int	neg_checker(int n)
 {
-	int temp;
-
-	*tens = 1;
-	*index = 0;
-	temp = negative_checker(n);
-	return (temp);
-}
-
-char			*ft_itoa(int n)
-{
-	int			num;
-	int			tens;
-	int			index;
-	char		*itoa;
-
-	n = init(n, &tens, &index);
-	num = n;
-	while (n > 9)
+	if (n < 0)
 	{
+		return (1);
+	}
+	return (0);
+}
+
+static int	temp_caller(int temp)
+{
+	int		len;
+
+	len = 0;
+	while (temp != 0)
+	{
+		temp = temp / 10;
+		len++;
+	}
+	return (len);
+}
+
+char		*ft_itoa(int n)
+{
+	int		len;
+	int		neg;
+	int		temp;
+	char	*str;
+
+	neg = neg_checker(n);
+	len = n_checker(n) + temp_caller(n) + neg_checker(n);
+	str = (char *)ft_memalloc(sizeof(char) * (len + 1));
+	len = len - 1;
+	if (n == 0)
+		str[len] = '0';
+	while (n != 0)
+	{
+		if (neg == 1)
+			str[len] = ((n % 10) * -1) + '0';
+		else
+			str[len] = (n % 10) + '0';
 		n = n / 10;
-		tens = tens * 10;
-		index++;
+		len--;
 	}
-	if (!(itoa = (char *)malloc(sizeof(*itoa) * (index + 1))))
-		return (NULL);
-	ft_bzero2(itoa, index + 1);
-	n = 0;
-	while (n <= index)
-	{
-		itoa[n++] = (num / tens) + '0';
-		num = num % tens;
-		tens = tens / 10;
-	}
-	itoa[n] = '\0';
-	return (itoa);
+	if (neg == 1)
+		str[len] = '-';
+	return (str);
 }
