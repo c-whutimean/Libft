@@ -6,7 +6,7 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 00:08:11 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/06 01:13:42 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/07 01:02:11 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ char		*ft_itoa(int n)
 {
 	int		len;
 	int		neg;
-	int		temp;
 	char	*str;
 
 	neg = neg_checker(n);
 	len = n_checker(n) + temp_caller(n) + neg_checker(n);
-	str = (char *)ft_memalloc(sizeof(char) * (len + 1));
+	if (!(str = (char *)ft_memalloc(sizeof(char) * (len + 1))))
+		return (NULL);
 	len = len - 1;
 	if (n == 0)
 		str[len] = '0';

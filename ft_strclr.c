@@ -6,7 +6,7 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 00:31:41 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/08/22 21:55:13 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/06 22:46:31 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_strclr(char *s)
 	int		i;
 	int		mod;
 
+	if (!s)
+		return ;
 	i = 0;
 	mod = 0;
 	while (s[i] != '\0')

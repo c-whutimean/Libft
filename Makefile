@@ -6,7 +6,7 @@
 #    By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/24 03:18:49 by trinnguy          #+#    #+#              #
-#    Updated: 2019/09/04 03:01:33 by trinnguy         ###   ########.fr        #
+#    Updated: 2019/09/07 00:15:37 by trinnguy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ CFILES = ft_putchar.c \
 					ft_lstdel.c \
 					ft_lstadd.c \
 					ft_lstiter.c \
+					ft_lstmap.c \
 					negative_checker.c \
 					charsplit.c \
 
