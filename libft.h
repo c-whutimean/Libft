@@ -6,7 +6,7 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 21:36:25 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/07 00:09:58 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/07 22:13:40 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,12 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-char				*charsplit(char const *s, char c);
-int					negative_checker(int n);
-char				*charsplit(char const *s, char c);
+char				*b_calculator(int a, int b, char op);
+int					b_charcount(char *str, char c);
+char				*b_chartrim(char const *s, char c);
+char				*b_cleanstr(char *dirty);
+void				b_errorexit(const char *str, int fd);
+int					b_negcheck(int n);
+int					b_numwords(const char *s, char c);
 
 #endif

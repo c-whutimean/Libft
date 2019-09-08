@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   charsplit.c                                        :+:      :+:    :+:   */
+/*   b_calculator.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/02 01:24:08 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/02 01:26:49 by trinnguy         ###   ########.fr       */
+/*   Created: 2019/09/07 22:19:16 by trinnguy          #+#    #+#             */
+/*   Updated: 2019/09/07 22:19:21 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*charsplit(char const *s, char c)
+char		*b_calculator(int a, int b, char op)
 {
-	int			i;
-	int			back;
-	char		*copy;
+	int		answer;
+	char	*ans;
 
-	i = 0;
-	back = 0;
-	if (!s)
-		return (NULL);
-	while (*s == c)
-		s++;
-	i = ft_strlen(s) - 1;
-	if (i == -1)
-		return (ft_strnew(0));
-	while (s[i--] == c)
-		back++;
-	copy = ft_strnew(ft_strlen(s) - back);
-	if (!copy)
-		return (NULL);
-	i = 0;
-	while (i < (int)ft_strlen(s) - back)
-	{
-		copy[i] = s[i];
-		i++;
-	}
-	return (copy);
+	answer = 0;
+	ans = 0;
+	if (op == '*')
+		answer = a * b;
+	if (op == '/')
+		answer = a / b;
+	if (op == '+')
+		answer = a + b;
+	if (op == '-')
+		answer = a - b;
+	if (op == '%')
+		answer = a % b;
+	ans = ft_itoa(answer);
+	return (ans);
 }

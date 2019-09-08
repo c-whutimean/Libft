@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   b_chartrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/23 00:59:54 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/07 21:57:37 by trinnguy         ###   ########.fr       */
+/*   Created: 2019/09/07 22:18:24 by trinnguy          #+#    #+#             */
+/*   Updated: 2019/09/07 22:18:30 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		from_behind(char const *s, int *i, int *back)
-{
-	while (s[*i] == ' ' || s[*i] == '\n' || s[*i] == '\t')
-	{
-		*i = *i - 1;
-		*back = *back + 1;
-	}
-}
-
-char			*ft_strtrim(char const *s)
+char		*b_chartrim(char const *s, char c)
 {
 	int			i;
 	int			back;
 	char		*copy;
 
 	i = 0;
+	back = 0;
 	if (!s)
 		return (NULL);
-	while (*s == ' ' || *s == '\n' || *s == '\t')
+	while (*s == c)
 		s++;
 	i = ft_strlen(s) - 1;
 	if (i == -1)
 		return (ft_strnew(0));
-	back = 0;
-	from_behind(s, &i, &back);
+	while (s[i--] == c)
+		back++;
 	copy = ft_strnew(ft_strlen(s) - back);
 	if (!copy)
 		return (NULL);
@@ -46,6 +38,5 @@ char			*ft_strtrim(char const *s)
 		copy[i] = s[i];
 		i++;
 	}
-	copy[i] = '\0';
 	return (copy);
 }
