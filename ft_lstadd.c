@@ -6,7 +6,7 @@
 /*   By: trinnguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 06:50:06 by trinnguy          #+#    #+#             */
-/*   Updated: 2019/09/04 05:02:13 by trinnguy         ###   ########.fr       */
+/*   Updated: 2019/09/12 21:11:32 by trinnguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void		ft_lstadd(t_list **alst, t_list *new)
 {
-	t_list	*add_elem;
-
-	if (!(add_elem = (t_list *)malloc(sizeof(t_list))))
-		return ;
-	add_elem = new;
-	add_elem->next = *alst;
-	*alst = add_elem;
+	new->next = *alst;
+	*alst = new;
 }
